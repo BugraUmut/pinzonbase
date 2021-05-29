@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 function isLoggedIn(req, res, next) {
@@ -30,27 +31,36 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login?error=true'
 }))
 
+router.get('/register', isLoggedOut, (req, res) => {
+    let response = {
+        title: "Register",
+        error: req.query.error
+    }
+    res.render('register', response)
+})
+
+router.post('/')
+
 router.get('/logout', (req, res) => {
     req.logout()
     res.redirect('/')
 })
 
 // Setup admin user. REMOVE THAT BEFORE PUBLISH
-router.get('/setup', async (req, res) => {
-    const exists = await User.exists({ username: 'admin' })
-
+router.post('/register', async (req, res) => {
+    const exists = await User.exists({ username: req.body.username })
+    
     if(exists) {
-        console.log("ex")
-        res.redirect('/login')
+        res.redirect('/register?error=true')
         return
     }
 
     bcrypt.genSalt(10, (err, salt) => {
         if(err) return next(err)
-        bcrypt.hash("pass", salt, (err, hash) => {
+        bcrypt.hash(req.body.password, salt, (err, hash) => {
             if(err) return next(err)
             const newAdmin = new User({
-                username: 'admin',
+                username: req.body.username,
                 password: hash
             })
 
