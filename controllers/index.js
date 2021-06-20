@@ -42,11 +42,11 @@ function loginGET(req, res) {
     res.render('login', response)
 }
 
-function loginPOST() {
+function loginPOST(req, res) {
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/login?error=true'
-    })
+    })(req, res)
 }
 
 function logout(req, res) {
