@@ -1,0 +1,16 @@
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase.deps.json
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase.runtimeconfig.json
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase.runtimeconfig.dev.json
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase.dll
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/ref/Pinzonbase.dll
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/bin/Debug/net5.0/Pinzonbase.pdb
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.csproj.AssemblyReference.cache
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.GeneratedMSBuildEditorConfig.editorconfig
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.AssemblyInfoInputs.cache
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.AssemblyInfo.cs
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.csproj.CoreCompileInputs.cache
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.dll
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/ref/Pinzonbase.dll
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.pdb
+/home/pinzongames/Desktop/OpenSourceProjects/Pinzonbase/obj/Debug/net5.0/Pinzonbase.genruntimeconfig.cache

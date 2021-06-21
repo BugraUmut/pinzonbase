@@ -6,10 +6,12 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 const localStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
+const bodyParser = require('body-parser')
 const app = express()
 const User = require('./models/user')
 
 const indexRouter = require('./routes/index')
+const sendDataRouter = require('./routes/sendData')
 
 mongoose.connect("mongodb://localhost/pinzonbase", {
     useNewUrlParser: true,
@@ -34,6 +36,14 @@ app.use(express.json())
 // Passport.js
 app.use(passport.initialize())
 app.use(passport.session())
+
+// Body Parser
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.use(function(req, res) {
+    res.write('you posted:\n')
+    res.end(JSON.stringify(req.body, null, 2))
+})
 
 passport.serializeUser((id, done) => {
     done(null, id)
@@ -62,6 +72,7 @@ passport.use(new localStrategy((username, password, done) => {
 
 // ROUTES
 app.use('/', indexRouter)
+app.use('/senddata/', sendDataRouter)
 
 app.listen(3002, () => {
     console.log('App listening')

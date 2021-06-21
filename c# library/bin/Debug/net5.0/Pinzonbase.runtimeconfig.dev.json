@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/pinzongames/.dotnet/store/|arch|/|tfm|",
+      "/home/pinzongames/.nuget/packages"
+    ]
+  }
+}
