@@ -12,8 +12,17 @@ const User = require('./models/user')
 
 const indexRouter = require('./routes/index')
 const sendDataRouter = require('./routes/sendData')
+const projectRouter = require('./routes/project')
 
-mongoose.connect("mongodb://localhost/pinzonbase", {
+console.log('No value for FOO yet:', process.env.MONGODB_URL);
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+console.log('Now the value for FOO is:', process.env.MONGODB_URL);
+
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -40,10 +49,6 @@ app.use(passport.session())
 // Body Parser
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(function(req, res) {
-    res.write('you posted:\n')
-    res.end(JSON.stringify(req.body, null, 2))
-})
 
 passport.serializeUser((id, done) => {
     done(null, id)
@@ -73,6 +78,7 @@ passport.use(new localStrategy((username, password, done) => {
 // ROUTES
 app.use('/', indexRouter)
 app.use('/senddata/', sendDataRouter)
+app.use('/project/', projectRouter)
 
 app.listen(3002, () => {
     console.log('App listening')

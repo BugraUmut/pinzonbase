@@ -1,0 +1,16 @@
+<form action="/project/new" method="POST">
+    <div>
+        <% if(error) { %>
+            <p class="err-msg">This name is not avabile.</p>
+        <% } %>
+        <h2>Create New Project</h2>
+    </div>
+    <div class="form-group">
+        <label for="projectName">Project Name:</label>
+        <input type="text" name="projectName" id="projectName">
+    </div>
+
+    <div>
+        <input type="submit" value="Create">
+    </div>
+</form>

@@ -65,7 +65,8 @@ function isLoggedOut(req, res, next) {
 }
 
 function indexGET(req, res) {
-    res.render('index' , { title: "Home" })
+    console.log(req.user)
+    res.render('index' , { title: "Home", username: req.user.username })
 }
 
 module.exports = {

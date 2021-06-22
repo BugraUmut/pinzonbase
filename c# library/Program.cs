@@ -5,14 +5,26 @@ using System.Net.Http;
 
 namespace Pinzonbase
 {
+    class PlayerData
+    {
+        public string name = "PLAYER_NAME";
+        public int coins = 25;
+    }
     class Program
     {
+        
+
         static void Main(string[] args)
         {
             //GetRequest("http://localhost:3002/senddata");
             PostRequest("http://localhost:3002/senddata");
 
             Console.ReadKey();
+        }
+
+        void SerializeDataClass<T>(T data)
+        {
+
         }
 
         async static void GetRequest(string url)

@@ -1,0 +1,31 @@
+const Project = require('../models/project')
+
+async function createProjectPOST(req, res) {
+    const projectName = req.body.projectName
+
+    Project.find({ projectName: projectName }, (err, docs) => {
+        if(err) return console.log(err)
+        console.log(docs)
+        if(!docs[0]) {
+            const newProject = new Project({
+                id: req.user._id,
+                projectName: req.body.projectName
+            })
+
+            newProject.save();
+
+            res.redirect('/project/')
+        } else {
+            res.render('project/new', { title: "New Project", error: true})
+        }
+    })
+}
+
+function createProjectGET(req, res) {
+    res.render('project/new', {title: "New Project", error: false})
+}
+
+module.exports = {
+    createProjectPOST,
+    createProjectGET
+}
