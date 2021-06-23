@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const findOrCreate = require('mongoose-find-or-create')
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -10,5 +11,6 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 })
+userSchema.plugin(findOrCreate)
 
 module.exports = mongoose.model('User', userSchema)

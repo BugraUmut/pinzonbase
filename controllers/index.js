@@ -64,8 +64,7 @@ function isLoggedOut(req, res, next) {
     res.redirect('/')
 }
 
-function indexGET(req, res) {
-    console.log(req.user)
+async function indexGET(req, res) {
     res.render('index' , { title: "Home", username: req.user.username })
 }
 

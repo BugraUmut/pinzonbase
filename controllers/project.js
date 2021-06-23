@@ -1,4 +1,5 @@
 const Project = require('../models/project')
+const UserData = require('../models/userdata')
 
 async function createProjectPOST(req, res) {
     const projectName = req.body.projectName
@@ -25,7 +26,25 @@ function createProjectGET(req, res) {
     res.render('project/new', {title: "New Project", error: false})
 }
 
+async function indexGET(req, res) {
+    await Project.find({id: req.user.id}, (err, docs) => {
+        if(err) return console.log(err)
+
+        res.render('project/index', { title: "Projects", projects: docs})
+    })
+}
+
+async function viewData(req, res) {
+    await UserData.find({projectId: req.body.projectId}, (err, docs) => {
+        if(err) return console.log(err)
+        console.log(docs)
+        res.render("project/viewdata", { title: "User Data", data: docs})
+    })
+}
+
 module.exports = {
     createProjectPOST,
-    createProjectGET
+    createProjectGET,
+    viewData,
+    indexGET
 }

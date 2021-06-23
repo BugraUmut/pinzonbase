@@ -13,7 +13,7 @@ const User = require('./models/user')
 const indexRouter = require('./routes/index')
 const sendDataRouter = require('./routes/sendData')
 const projectRouter = require('./routes/project')
-
+const apiRouter = require('./routes/api/api')
 console.log('No value for FOO yet:', process.env.MONGODB_URL);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -79,7 +79,8 @@ passport.use(new localStrategy((username, password, done) => {
 app.use('/', indexRouter)
 app.use('/senddata/', sendDataRouter)
 app.use('/project/', projectRouter)
+app.use('/api/', apiRouter)
 
-app.listen(3002, () => {
+app.listen(process.env.PORT, () => {
     console.log('App listening')
 })
