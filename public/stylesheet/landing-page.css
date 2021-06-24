@@ -1,0 +1,11 @@
+#login-section, #register-section {
+    flex: 2;
+    background-color: #fff;
+    padding: 48px 96px;
+}
+
+#landing-image {
+    flex: 3;
+    background-image: url("https://picsum.photos/1200");
+    background-size: cover;
+}

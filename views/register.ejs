@@ -1,31 +1,29 @@
-<form action="/register" method="post">
-    <div>
-        <% if (error) { %>
-         <p class="err-msg">Username is already taken</p>
-        <% } %>
-        <h1>Register</h1>
+<div class="flex-container">
+    <div id="register-section" class="container-item">
+        <form action="/login" method="post">
+            <div class="form-header">
+                <% if (error) { %>
+                    <p class="err-msg">Username is already taken</p>
+                <% } %>
+                <h1>Register</h1>
+            </div>
+            <div class="form-body">
+                <div class="input-group">
+                    <label>Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label>Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-group">
+                    <input type="submit" value="Register">
+                </div>
+            </div>
+            <div class="form-footer">
+                <p>Already have account? <a href="/login">Login here!</a></p>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label>Username:</label>
-        <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Enter your username"
-            required
-        >
-    </div>
-    <div class="form-group">
-        <label>Password:</label>
-        <input 
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-        >
-    </div>
-    <div>
-        <input type="submit" value="Register">
-    </div>
-</form>
+    <div id="landing-image" class="container-item"></div>
+</div>

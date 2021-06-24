@@ -1,0 +1,23 @@
+nav {
+    width: 100%;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+nav ul li {
+    float: left;
+    list-style: none;
+    margin: 0 16px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #777;
+}
+
+.home {
+    padding: 24px 48px;
+}

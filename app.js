@@ -83,5 +83,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT, () => {
-    console.log('App listening')
+    console.log('App listening on port:', process.env.PORT)
 })
