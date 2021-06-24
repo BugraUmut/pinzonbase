@@ -1,0 +1,17 @@
+.btn {
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2fbb4f;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+}
+
+.btn-secondary {
+    color: #444;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+}

@@ -1,0 +1,42 @@
+.form-header, .form-body {
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.form-footer {
+    padding: 16px;
+}
+
+.input-group {
+    display: block;
+    margin: 16px 0;
+}
+
+.input-group input {
+    width: 100%;
+    margin: 16px 0;
+    padding: 16px 24px;
+    border: solid 2px #eee;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.input-group input[type="submit"] {
+    border: none;
+    background-color: #2fbb4f;
+    box-shadow: 0 4px 0 #26963f;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.input-group input[type="submit"]:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.input-group input:not([type="submit"]):focus {
+    background-color: #fff;
+    border: solid 2px #2fbb4f;
+}
