@@ -14,13 +14,10 @@ const indexRouter = require('./routes/index')
 const sendDataRouter = require('./routes/sendData')
 const projectRouter = require('./routes/project')
 const apiRouter = require('./routes/api/api')
-console.log('No value for FOO yet:', process.env.MONGODB_URL);
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
-console.log('Now the value for FOO is:', process.env.MONGODB_URL);
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
@@ -80,6 +77,10 @@ app.use('/', indexRouter)
 app.use('/senddata/', sendDataRouter)
 app.use('/project/', projectRouter)
 app.use('/api/', apiRouter)
+
+app.get('*', (req, res) => {
+  res.status(404).render('404', { title: "Page Not Found" })
+})
 
 app.listen(process.env.PORT, () => {
     console.log('App listening')

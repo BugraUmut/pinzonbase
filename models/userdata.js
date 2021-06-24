@@ -9,7 +9,7 @@ const userDataSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    dataJson: {
+    userData: {
         type: String,
         required: true
     }
