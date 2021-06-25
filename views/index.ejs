@@ -14,4 +14,12 @@
         <h1>Home</h1>
         <p>Welcome, <strong><%= username %></strong></p>
     </div>
+    <div class="projects">
+      <% projects.forEach(x => { %>
+       <div>
+           <p>id: <%= x._id %> </p>
+           <p>name: <%= x.projectName %> </p>
+       </div>
+      <% }) %>
+    </div>
 </div>

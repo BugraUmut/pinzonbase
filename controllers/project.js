@@ -26,14 +26,6 @@ function createProjectGET(req, res) {
     res.render('project/new', {title: "New Project", error: false})
 }
 
-async function indexGET(req, res) {
-    await Project.find({id: req.user.id}, (err, docs) => {
-        if(err) return console.log(err)
-
-        res.render('project/index', { title: "Projects", projects: docs})
-    })
-}
-
 async function viewData(req, res) {
     await UserData.find({projectId: req.body.projectId}, (err, docs) => {
         if(err) return console.log(err)
@@ -45,6 +37,5 @@ async function viewData(req, res) {
 module.exports = {
     createProjectPOST,
     createProjectGET,
-    viewData,
-    indexGET
+    viewData
 }

@@ -21,3 +21,7 @@ nav ul li a {
 .home {
     padding: 24px 48px;
 }
+
+.projects div {
+  border: 1px solid black;
+}

@@ -1,6 +1,7 @@
 const passport = require('passport')
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
+const Project = require('../models/project')
 
 function registerGET(req, res) {
     let response = {
@@ -12,7 +13,7 @@ function registerGET(req, res) {
 
 async function registerPOST(req, res) {
     const exists = await User.exists({ username: req.body.username })
-    
+
     if(exists) {
         res.redirect('/register?error=true')
         return
@@ -65,9 +66,12 @@ function isLoggedOut(req, res, next) {
 }
 
 async function indexGET(req, res) {
-    res.render('index' , { title: "Home", username: req.user.username })
-}
+    await Project.find({id: req.user.id}, (err, docs) => {
+        if(err) return console.log(err)
 
+        res.render('index' , { title: "Home", username: req.user.username, projects: docs })
+    })
+}
 module.exports = {
     registerPOST,
     registerGET,
