@@ -1,4 +1,4 @@
-<form action="/project/new" method="POST">
+<!-- <form action="/project/new" method="POST">
     <div>
         <% if(error) { %>
             <p class="err-msg">This name is not avabile.</p>
@@ -13,4 +13,17 @@
     <div>
         <input type="submit" value="Create">
     </div>
-</form>
+</form> -->
+
+<div class="max-w-screen-xl p-16">
+    <a class="text-blue-500 leading-normal" href="/project">← Go back</a>
+    <h1 class="text-4xl font-bold leading-relaxed mb-6">Create new project 🚀</h1>
+    <% if(error) { %>
+        <p class="bg-red-100 border-2 border-red-300 text-red-500 rounded-md mb-4 px-4 py-3">This name is not available</p>
+    <% } %>
+    <form action="/project/new" method="POST">
+        <label class="block mb-2" for="projectName">Project name</label>
+        <input class="block w-full border-2 rounded-md mb-6 px-6 py-4" type="text" name="projectName" placeholder="Enter your project name">
+        <input class="block w-full lg:w-auto bg-green-400 text-white rounded-md mb-8 px-8 py-4 cursor-pointer" type="submit" value="Create project">
+    </form>
+</div>

@@ -1,17 +1,27 @@
-<div>
-    <nav>
-        <div>
-            <h1>PinzonBase API</h1>
-        </div>
-        <div>
-            <ul>
-                <li><a class="btn btn-secondary" href="/logout">Logout</a></li>
-                <li><a class="btn btn-primary" href="/project/new">New Project</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="home">
-        <h1>Home</h1>
-        <p>Welcome, <strong><%= username %></strong></p>
+<!-- Navbar -->
+<nav class="w-full bg-white border-b py-6">
+    <div class="max-w-screen-xl flex justify-between mx-auto px-12">
+        <h1>PinzonBase</h1>
+        <ul class="flex">
+            <% if (username) { %>
+                <li class="mr-8"><a class="py-3 px-4" href="/logout">Logout</a></li>
+                <li><a class="bg-green-400 text-white py-3 px-4 rounded-md shadow-md hover:shadow-lg" href="/project/new">New Project 🚀</a></li>
+                <% } else { %>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <% } %>
+        </ul>
     </div>
-</div>
+</nav>
+
+<section class="py-32">
+    <div class="max-w-screen-xl mx-auto text-center px-12">
+        <h1 class="text-7xl font-extrabold leading-tight tracking-tight">Build Your Game With PinzonBase</h1>
+        <p class="text-xl font-light mb-8">PinzonBase is an open source API. Lorem ipsum dot si color amet.</p>
+        <div>
+            <a class="block md:inline-block bg-green-400 text-white mb-4 md:mb-0 py-4 px-16 rounded-md shadow-md hover:shadow-lg" href="#">Get Started</a>
+            <a class="block md:inline-block bg-white ml-0 md:ml-4 py-4 px-16 rounded-md shadow-md hover:shadow-lg" href="#">Documentation</a>
+        </div>
+    </div>
+</section>

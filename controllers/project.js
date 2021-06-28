@@ -30,7 +30,7 @@ async function indexGET(req, res) {
     await Project.find({id: req.user.id}, (err, docs) => {
         if(err) return console.log(err)
 
-        res.render('project/index', { title: "Projects", projects: docs})
+        res.render('project/index', { title: "Projects", projects: docs, username: req.user.username })
     })
 }
 
