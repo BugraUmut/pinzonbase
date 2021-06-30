@@ -3,7 +3,7 @@ module.exports = {
     enabled: false,
     content: ['./views/**/*.ejs']
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: true, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ['Fira Sans', 'sans-serif']
