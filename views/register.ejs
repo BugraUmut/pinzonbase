@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="flex-container">
     <div id="register-section" class="container-item">
         <form action="/register" method="post">
@@ -23,7 +24,35 @@
             <div class="form-footer">
                 <p>Already have account? <a href="/login">Login here!</a></p>
             </div>
+=======
+<div class="bg-white flex min-h-screen">
+    <div class="w-full lg:w-1/2 p-24">
+        <h1 class="text-4xl font-bold leading-relaxed mb-6">Register 🤩</h1>
+        <% if(error) { %>
+            <p class="bg-red-100 border-2 border-red-300 text-red-500 rounded-md mb-4 px-4 py-3">Username is already taken</p>
+        <% } %>
+        <form action="/register" method="POST">
+            <label class="block mb-2" for="username">Username</label>
+            <input class="block w-full border-2 rounded-md mb-4 px-6 py-4"
+                type="text"
+                name="username"
+                placeholder="Enter your username">
+            <label class="block mb-2" for="password">Password</label>
+            <input class="block w-full border-2 rounded-md mb-6 px-6 py-4"
+                type="password"
+                name="password"
+                placeholder="Enter your password">
+            <input class="block w-full lg:w-auto  bg-green-400 text-white rounded-md mb-8 px-8 py-4 cursor-pointer"
+                type="submit"
+                value="Join the magical adventures">
+>>>>>>> 8761d970c3252f69efeead359f054329f888b6fd
         </form>
+        <p class="inline-block">Already have an account? <a class="text-blue-600" href="/login">Login here!</a></p>
     </div>
+<<<<<<< HEAD
     <div id="landing-image" class="container-item"></div>
 </div>
+=======
+    <div class="hidden lg:flex lg:w-1/2 bg-auth-image bg-cover"></div>
+</div>
+>>>>>>> 8761d970c3252f69efeead359f054329f888b6fd
