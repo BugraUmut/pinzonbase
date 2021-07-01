@@ -15,7 +15,7 @@ async function createProjectPOST(req, res) {
 
             newProject.save();
 
-            res.redirect('/project/')
+            res.redirect('/')
         } else {
             res.render('project/new', { title: "New Project", error: true})
         }
