@@ -48,7 +48,11 @@ async function loadData(req, res) {
                 if(err) return res.send("error")
 
                 if(!_result[0]) {
-                    update(req, res)
+                    UserData.updateOne({ projectId: req.body.projectId, deviceId: req.body.deviceId }, { projectId: req.body.projectId, deviceId: req.body.deviceId, userData: "{}"}, { upsert: true }, (err) => {
+                        if(err) return console.log("Error: " + err)
+
+                        return res.send("New user data created Successfully.")
+                    })
                     return;
                 } else {
                     res.send(_result[0].userData)
