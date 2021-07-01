@@ -4,6 +4,8 @@ const Project = require('../models/project')
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 
+function apiGET(req, res) { res.send("GET request does not do anything. Switch to POST instead") }
+
 function apiPOST(req, res) {
     if(req.body.requestType == "save") {
         update(req, res)
