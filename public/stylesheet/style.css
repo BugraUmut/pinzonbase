@@ -6,11 +6,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #191919;
+  background: #fff;
 }
 
 .box {
-  width: 50%;
+  width: 40%;
   padding: 1rem;
   top: 50%;
   left: 50%;
@@ -50,10 +50,10 @@ body {
   border: 0;
   background: none;
   display: block;
-  margin: 0.9rem auto; /* MAKE IT RESPONSIVE */
+  margin: 0.9rem auto;
   text-align: center;
   border: 2px solid #2ecc71;
-  padding: 0.6rem 2rem; /* MAKE IT RESPONSIVE */
+  padding: 0.6rem 2rem;
   outline: none;
   color: white;
   border-radius: 24px;
@@ -65,8 +65,14 @@ body {
   background: #2ecc71;
 }
 
-/*@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 700px) {
+  .box {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
   .box {
     width: 80%;
   }
-}*/
+}
