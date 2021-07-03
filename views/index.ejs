@@ -1,36 +1,8 @@
-<!-- Navbar -->
-<nav class="w-full bg-white border-b py-6">
-    <div class="max-w-screen-xl flex justify-between mx-auto px-12">
-        <h1>PinzonBase</h1>
-        <ul class="flex">
-            <% if (username) { %>
-                <li class="mr-8"><a class="py-3 px-4" href="/logout">Logout</a></li>
-                <li><a class="bg-green-400 text-white py-3 px-4 rounded-md shadow-md hover:shadow-lg" href="/project/new">New Project 🚀</a></li>
-                <% } else { %>
-                <li>
-                    <a href="/login">Login</a>
-                </li>
-                <% } %>
-        </ul>
+<section class="center">
+    <h1>Pinzonbase</h1>
+    <h5>Pinzonbase is an open source API to store your player's data with Unity Engine</h5>
+    <div class="get-started-buttons">
+        <a href="/project/new">Get Started</a>
+        <a href="$">Documentation</a>
     </div>
-</nav>
-
-<section class="py-32">
-    <div class="max-w-screen-xl mx-auto text-center px-12">
-        <h1 class="text-7xl font-extrabold leading-tight tracking-tight">Build Your Game With PinzonBase</h1>
-        <p class="text-xl font-light mb-8">PinzonBase is an open source API. Lorem ipsum dot si color amet.</p>
-        <div>
-            <a class="block md:inline-block bg-green-400 text-white mb-4 md:mb-0 py-4 px-16 rounded-md shadow-md hover:shadow-lg" href="#">Get Started</a>
-            <a class="block md:inline-block bg-white ml-0 md:ml-4 py-4 px-16 rounded-md shadow-md hover:shadow-lg" href="#">Documentation</a>
-        </div>
-    </div>
-    <div class="projects">
-      <% projects.forEach(x => { %>
-       <div>
-           <p>id: <%= x._id %> </p>
-           <p>name: <%= x.projectName %> </p>
-       </div>
-      <% }) %>
-    </div>
-</div>
 </section>

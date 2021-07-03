@@ -32,8 +32,9 @@ html {
 body {
   font-family: sans-serif;
   background: var(--bg-primary);
+  color: var(--text-primary);
 }
-
+a { color: var(--text-secondary); }
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
@@ -62,7 +63,12 @@ body::-webkit-scrollbar-thumb {
   left 600ms ease
   ;
 }
-
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
 .box {
   width: 40%;
   padding: 1rem;
@@ -237,6 +243,10 @@ main {
 
 .navbar:hover .logo svg {
   transform: rotate(-180deg);
+}
+
+section.center {
+  text-align: center;
 }
 
 /* Small screens */
