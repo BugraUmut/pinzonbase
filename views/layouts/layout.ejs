@@ -10,18 +10,15 @@
 <body>
   <!-- MOBILE NAV -->
   <div class="mobile-nav">
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-      <header>pinzonbase</header>
-      <a href="files/Calculator/calculator.html">
-        <span>projects</span>
-      </a>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
-  </div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
 
   
   <!-- DESKTOP NAV -->
@@ -144,6 +141,17 @@
   <div id="app">
       <%- body %>
   </div>
+  <script>
+    function openNav() {
+      document.getElementById("sidebar").style.width = "250px";
+      document.getElementById("app").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("app").style.marginLeft= "0";
+    }
+    </script>
   <script src="../js/theme.js"></script>
 
 </body>
