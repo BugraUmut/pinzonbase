@@ -58,24 +58,17 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   left: 4.2rem;
   
-  transition:
-  max-width 600ms ease,
-  left 600ms ease
-  ;
+  transition: max-width 600ms ease, left 600ms ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  position: absolute;
-}
+
 .box {
   width: 40%;
   padding: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  position: absolute;
+
   background: transparent;
   text-align: center;
 }
@@ -223,7 +216,7 @@ main {
   text-align: center;
   color: var(--text-secondary);
   background: var(--bg-secondary);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   letter-spacing: 0.3ch;
   width: 100%;
 }
@@ -325,4 +318,74 @@ section.center {
 
 .light #lightIcon {
   display: block;
+}
+
+/* Get Started Buttons */
+
+.get-started-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.get-started-buttons button {
+  position: relative;
+  height: 60px;
+  width: 200px;
+  margin: 0 35px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: var(--transition-speed);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.get-started-buttons button:first-child:hover {
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+
+.get-started-buttons button:last-child:hover {
+  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+  background-size: 400%;
+}
+
+.get-started-buttons button:first-child::before,
+.get-started-buttons button:last-child::before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.get-started-buttons button:first-child:hover::before,
+.get-started-buttons button:last-child:hover::before {
+  opacity: 1;
+  z-index: -1;
+}
+
+.get-started-buttons button:hover {
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
