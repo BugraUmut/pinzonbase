@@ -249,7 +249,10 @@ section.center {
     width: 100vw;
     height: 4.2rem;
   }
-
+  #app {
+    width: 100vw;
+    max-height: calc(100% - 4.2rem);
+  }
   .logo {
     display: none;
   }
