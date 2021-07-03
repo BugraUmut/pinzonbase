@@ -12,6 +12,18 @@
   padding: 0;
   text-decoration: none;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  display: flow-root;
+  min-width: 100vw;
+  min-height: 100vh;
+}
 
 html {
   font-size: min(max(1rem, 4vw), 22px);
@@ -32,6 +44,23 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: var(--text-primary);
+}
+
+#app {
+  display: flow-root;
+  max-width: calc(100% - 4.2rem);
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 1.5rem;
+
+  position: relative;
+  left: 4.2rem;
+  
+  transition:
+  max-width 600ms ease,
+  left 600ms ease
+  ;
 }
 
 .box {
@@ -109,7 +138,6 @@ main {
   margin-left: 4.2rem;
   padding: 0.7rem;
 }
-
 .navbar {
   position: fixed;
   background-color: var(--bg-primary);
@@ -117,6 +145,11 @@ main {
   overflow: none;
   z-index: 9999;
   box-shadow: 2px 0 10px -1px #000;
+}
+
+.navbar:hover + #app {
+  max-width: calc(100% - 10rem);
+  left: 10rem;
 }
 
 .navbar-nav {
