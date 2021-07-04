@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link rel="stylesheet" href="../../../stylesheet/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -12,10 +12,7 @@
   <div class="mobile-nav">
     <div id="sidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <a href="/project/">Projects</a>
     </div>
     <button class="openbtn" onclick="openNav()">☰</button>
     </div>
@@ -144,12 +141,10 @@
   <script>
     function openNav() {
       document.getElementById("sidebar").style.width = "250px";
-      document.getElementById("app").style.marginLeft = "250px";
     }
     
     function closeNav() {
       document.getElementById("sidebar").style.width = "0";
-      document.getElementById("app").style.marginLeft= "0";
     }
     </script>
   <script src="../js/theme.js"></script>

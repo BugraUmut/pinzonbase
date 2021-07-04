@@ -41,10 +41,17 @@ async function viewData(req, res) {
         res.render("project/viewdata", { title: "User Data", data: docs})
     })
 }
-
+async function dataGET(req, res) {
+    await UserData.find({ projectId: req.params.projectId }, (err, docs) => {
+        if(err) return console.log(err)
+        console.log(docs)
+        res.render("project/userData", { title: "agaedg", data: docs })
+    })
+}
 module.exports = {
     createProjectPOST,
     createProjectGET,
     viewData,
-    indexGET
+    indexGET,
+    dataGET
 }

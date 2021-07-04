@@ -1,8 +1,12 @@
 <div class="projects">
     <% projects.forEach(x => { %>
-     <div>
+     <div class="project">
          <p>id: <%= x._id %> </p>
          <p>name: <%= x.projectName %> </p>
+
+         <a href="/project/data/<%= x._id %>">Show Data</a>
      </div>
     <% }) %>
+
+    <a href="/project/new" class="button">New Project</a>
   </div>

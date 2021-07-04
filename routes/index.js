@@ -3,7 +3,6 @@ const router = express.Router()
 const Controller = require('../controllers/index')
 
 router.get('/', Controller.isLoggedIn, Controller.indexGET)
-//router.post('/')
 
 router.get('/login', Controller.isLoggedOut, Controller.loginGET)
 router.post('/login', (req, res) => Controller.loginPOST(req, res) )

@@ -33,8 +33,11 @@ body {
   font-family: sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
+
 a { color: var(--text-secondary); }
+
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
@@ -48,15 +51,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 #app {
-  display: flow-root;
-  max-width: calc(100% - 4.2rem);
+  display: flex;
   width: 100%;
   min-height: 100vh;
   height: auto;
-  padding: 1.5rem;
 
   position: relative;
-  left: 4.2rem;
   
   transition: max-width 600ms ease, left 600ms ease, margin-left .5s;
 
@@ -248,7 +248,7 @@ section.center {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: var(--bg-secondary);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -258,13 +258,13 @@ section.center {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: var(--text-primary);
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: var(--text-secondary);
 }
 
 .sidebar .closebtn {
@@ -279,8 +279,8 @@ section.center {
   position: absolute;
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 10px 15px;
   margin-left: 10px;
   margin-top: 15px;
@@ -290,7 +290,7 @@ section.center {
 .openbtn:hover {
   background-color: #444;
 }
-
+.mobile-nav { position: fixed; z-index: 99999; } 
 /* Small screens */
 @media only screen and (max-width: 600px) {
   .mobile-nav, .openbtn {
@@ -305,8 +305,7 @@ section.center {
 /* Large screens */
 @media only screen and (min-width: 600px) {
 
-  nav { display: none; }                          /* BURAYI DÜZELTMEYİ UNUTMA LAN */ 
-  /* .mobile-nav, .openbtn { display: none; } */
+  .mobile-nav, .openbtn { display: none; }
 
   .navbar {
     top: 0;
@@ -370,9 +369,9 @@ section.center {
 
 .get-started-buttons button {
   position: relative;
-  height: 60px;
-  width: 200px;
-  margin: 0 35px;
+  height: 2rem;
+  width: 30%;
+  margin: 0 1rem;
   border-radius: 25px;
   border: none;
   outline: none;
@@ -427,4 +426,73 @@ section.center {
   100% {
     background-position: 400%;
   }
+}
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .get-started-buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .get-started-buttons button:last-child {
+    margin-top: 1rem;
+  }
+
+  .get-started-buttons button {
+    width: 90vw;
+    height: 2rem;
+  }
+}
+/* Large screens */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Link Buttons */
+a.button {
+  color: var(--text-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+}
+
+a.button:hover {
+  color: var(--bg-primary) !important;
+  background: var(--text-primary);
+  border-color: var(--text-primary) !important;
+  transition: all 0.4s ease 0s;
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  a.button:hover {
+    box-shadow: var(--text-secondary) 0px 5px 15px;
+  }
+}
+
+
+/* Projects Index Page */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 90%;
+  border-radius: 15px;
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  
 }

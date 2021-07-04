@@ -1,0 +1,10 @@
+<div class="projects">
+    <% data.forEach(x => { %>
+     <div class="project">
+         <p>Device ID: <%= x.deviceId %></p>
+         <p>Data: <br> <%= x.userData %></p>
+
+         <a href="/project/data/<%= x._id %>">Show Data</a>
+     </div>
+    <% }) %>
+  </div>
